@@ -1,0 +1,147 @@
+// src/styles/sections/_features.scss
+@import '../variables';
+@import '../mixins';
+
+.feature-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $background-white; // Cards/sections can still be white on off-white
+  @include responsive-container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem; // gap-12
+  align-items: center;
+
+  // Spacing between feature sections
+  &:not(:first-of-type) {
+    margin-top: $spacing-section-y; // Adds space between consecutive feature sections
+    background-color: $off-white-background; // Alternate background if desired
+  }
+  &:nth-of-type(even) { // For every second feature section
+    background-color: $off-white-background; // Ensures alternation
+  }
+
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-content {
+    order: 2; // Default: content on right
+    animation: fadeInL 0.8s ease-out forwards; // Initial animation
+    @media (min-width: 768px) { order: 1; } // On desktop, content on left by default
+  }
+
+  .feature-image-container {
+    order: 1; // Default: image on left
+    animation: fadeInR 0.8s ease-out forwards; // Initial animation
+    @media (min-width: 768px) { order: 2; } // On desktop, image on right by default
+    background-color: $border-color;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    box-shadow: $shadow-xl;
+  }
+
+  &--reversed { // Class for alternating asymmetry
+    .feature-content {
+      order: 2; // Keep content on right
+      animation: fadeInR 0.8s ease-out forwards; // Animates from right
+      @media (min-width: 768px) { order: 2; } // On desktop, content on right
+    }
+
+    .feature-image-container {
+      order: 1; // Keep image on left
+      animation: fadeInL 0.8s ease-out forwards; // Animates from left
+      @media (min-width: 768px) { order: 1; } // On desktop, image on left
+    }
+  }
+
+
+  .feature-title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: 700; // font-bold
+    margin-bottom: 1.5rem; // mb-6
+    color: $text-dark;
+  }
+
+  .feature-description {
+    font-size: 1.125rem; // text-lg
+    color: $text-medium;
+    line-height: 1.625; // leading-relaxed
+    margin-bottom: 2rem; // mb-8
+  }
+
+  .feature-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: $border-radius-xl;
+  }
+}
+
+.features-list-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $background-light;
+  @include responsive-container;
+  text-align: center;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .features-list-title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: 700; // font-bold
+    margin-bottom: 3rem; // mb-12
+    color: $text-dark;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem; // gap-10
+
+    @media (min-width: 768px) { // md breakpoint
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature-card {
+    background-color: $background-white;
+    border-radius: $border-radius-xl; // rounded-xl
+    box-shadow: $shadow-lg;
+    padding: 2rem; // p-8
+    transition: all $transition-duration $transition-timing-function;
+
+    &:hover {
+      @include hover-float-shadow;
+    }
+
+    .feature-icon {
+      color: $primary-color; // Icons will use the new primary color
+      margin-bottom: 1.5rem; // mb-6
+      display: flex;
+      justify-content: center; // Center SVG
+      svg {
+        height: 4rem; // h-16
+        width: 4rem; // w-16
+      }
+    }
+
+    .feature-card-title {
+      font-size: 1.5rem; // text-2xl
+      font-weight: 600; // font-semibold
+      margin-bottom: 1rem; // mb-4
+      color: $text-dark;
+    }
+
+    .feature-card-description {
+      color: $text-medium;
+      line-height: 1.625; // leading-relaxed
+    }
+  }
+}

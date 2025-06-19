@@ -1,0 +1,24 @@
+// src/styles/_mixins.scss
+@mixin hover-float-shadow {
+  transform: translateY(-4px) scale(1.01); // Slightly less scale for subtlety
+  box-shadow: $shadow-xl;
+}
+
+@mixin responsive-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

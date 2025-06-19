@@ -1,0 +1,67 @@
+// src/styles/sections/_about-me.scss
+@import '../variables';
+@import '../mixins';
+
+.about-me-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $off-white-background; // Main off-white background
+  @include responsive-container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem; // gap-12
+  align-items: center;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    grid-template-columns: 2fr 1fr; // Content wider than image
+    gap: 6rem; // Increased gap for more space
+  }
+
+  .about-me-content {
+    order: 2; // Default order on mobile
+    @media (min-width: 768px) { order: 1; } // Content on left for desktop
+  }
+
+  .about-me-title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: 700; // font-bold
+    margin-bottom: 1.5rem; // mb-6
+    color: $text-dark;
+  }
+
+  .about-me-description {
+    font-size: 1.125rem; // text-lg
+    color: $text-medium;
+    line-height: 1.625; // leading-relaxed
+    margin-bottom: 1.25rem; // space between paragraphs
+    &:last-of-type {
+      margin-bottom: 2rem; // space before button
+    }
+  }
+
+  .about-me-image-container {
+    order: 1; // Default order on mobile
+    @media (min-width: 768px) { order: 2; } // Image on right for desktop
+    display: flex; // To center image
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; // some padding around image for effect
+    background-color: $background-white; // A subtle background for the image
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-lg;
+  }
+
+  .about-me-image {
+    width: 100%;
+    max-width: 300px; // Max width for the image
+    height: auto;
+    border-radius: $border-radius-md; // Rounded corners for image
+    display: block; // Remove extra space below image
+  }
+
+  .about-me-btn {
+    margin-top: 1.5rem; // Give some space
+  }
+}

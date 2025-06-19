@@ -1,0 +1,92 @@
+// src/styles/components/_navbar.scss
+@import '../variables';
+@import '../mixins';
+
+.navbar {
+  background-color: $background-white; // Still white, contrasts well with off-white body
+  box-shadow: $shadow-sm;
+  padding: $spacing-md $spacing-lg; // py-4 px-6
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  top: 0;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-left: $spacing-xxl; // px-12
+    padding-right: $spacing-xxl; // px-12
+  }
+
+  &-container {
+    @include responsive-container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-logo a {
+    font-size: 1.5rem; // text-2xl
+    font-weight: 700; // font-bold
+    color: $text-dark;
+    transition: color $transition-duration;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .mobile-menu-toggle {
+    @media (min-width: 768px) { // md breakpoint
+      display: none;
+    }
+    button {
+      color: $text-medium;
+      &:hover {
+        color: $text-dark;
+      }
+      &:focus {
+        outline: none;
+        color: $text-dark;
+      }
+    }
+  }
+
+  .nav-links-desktop {
+    display: none;
+    @media (min-width: 768px) { // md breakpoint
+      display: flex;
+      gap: 2rem; // space-x-8
+    }
+  }
+
+  .nav-links-mobile {
+    margin-top: $spacing-md;
+    @media (min-width: 768px) { // md breakpoint
+      display: none;
+    }
+    .nav-link {
+      display: block;
+      margin-bottom: 0.5rem; /* Reduced space slightly for mobile links */
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    border-bottom: 2px solid transparent;
+    transition: border-color $transition-duration, color $transition-duration;
+    font-size: 1.125rem; // text-lg
+    font-weight: 500; // font-medium
+    color: $text-dark; // Changed to dark text color for visibility
+    text-decoration: none; // Removed underline
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color; // Active/hover color can be primary
+    }
+
+    &.active {
+      border-color: $primary-color;
+      color: $primary-color;
+      font-weight: 600; // font-semibold
+    }
+  }
+}

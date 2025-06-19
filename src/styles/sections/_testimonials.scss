@@ -1,0 +1,45 @@
+// src/styles/sections/_testimonials.scss
+@import '../variables';
+@import '../mixins';
+
+.testimonial-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $primary-color; // Testimonial section now uses the new primary color
+  color: $text-light;
+  text-align: center;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .testimonial-title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: 700; // font-bold
+    margin-bottom: 3rem; // mb-12
+  }
+
+  .testimonial-content {
+    max-width: 48rem; // max-w-3xl
+    margin-left: auto;
+    margin-right: auto;
+    @include responsive-container;
+  }
+
+  .testimonial-quote {
+    font-size: 1.25rem; // text-xl
+    @media (min-width: 768px) { // md breakpoint
+      font-size: 1.5rem; // text-2xl
+    }
+    font-style: italic;
+    line-height: 1.625; // leading-relaxed
+    margin-bottom: 2rem; // mb-8
+  }
+
+  .testimonial-author {
+    font-size: 1.125rem; // text-lg
+    font-weight: 600; // font-semibold
+    color: $accent-color-light; // Uses the new light accent color for author name
+  }
+}

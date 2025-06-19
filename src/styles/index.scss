@@ -1,0 +1,38 @@
+// src/styles/index.scss (main entry file)
+// Import variables and mixins first
+@import 'variables';
+@import 'mixins';
+
+// Import base styles
+@import 'base';
+
+// Import component styles
+@import 'components/navbar';
+@import 'components/buttons';
+
+// Import section styles
+@import 'sections/hero';
+@import 'sections/features';
+@import 'sections/testimonials';
+@import 'sections/gallery';
+@import 'sections/cta';
+@import 'sections/about-me'; // NEW
+@import 'sections/contact';   // NEW
+
+
+// Import footer styles
+@import 'footer';
+
+// Global App container padding to account for fixed navbar
+.app-container {
+    padding-top: 5rem; // Height of navbar, adjust if navbar height changes
+    min-height: 100vh;
+    background-color: $off-white-background; // Ensures this applies globally
+    font-family: $font-primary;
+    color: $text-dark;
+}
+
+.main-content {
+    // No top padding here as .app-container handles it
+    padding-top: 0;
+}

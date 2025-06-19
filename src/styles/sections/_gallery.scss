@@ -1,0 +1,74 @@
+// src/styles/sections/_gallery.scss
+@import '../variables';
+@import '../mixins';
+
+.gallery-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $background-light; // Uses off-white background
+  @include responsive-container;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .gallery-title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: 700; // font-bold
+    text-align: center;
+    margin-bottom: 3rem; // mb-12
+    color: $text-dark;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; // gap-8
+
+    @media (min-width: 640px) { // sm breakpoint
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) { // lg breakpoint
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: $border-radius-xl; // rounded-xl
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+    transition: all $transition-duration $transition-timing-function;
+
+    &:hover {
+      @include hover-float-shadow;
+    }
+
+    &-image {
+      width: 100%;
+      height: 16rem; // h-64
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6); // bg-black bg-opacity-60
+      @include flex-center;
+      opacity: 0;
+      transition: opacity $transition-duration;
+
+      .gallery-item:hover & {
+        opacity: 1;
+      }
+    }
+
+    &-title {
+      color: $background-white;
+      font-size: 1.25rem; // text-xl
+      font-weight: 700; // font-bold
+    }
+  }
+}

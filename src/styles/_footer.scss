@@ -1,0 +1,91 @@
+// src/styles/_footer.scss
+@import './variables';
+@import './mixins';
+
+.footer {
+  background-color: $background-dark; // Uses the dark complementary color
+  color: $text-medium; // gray-300
+  padding-top: 3rem; // py-12
+  padding-bottom: 3rem; // py-12
+
+  &-container {
+    @include responsive-container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; // gap-8
+
+    @media (min-width: 768px) { // md breakpoint
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &-column {
+    .footer-heading {
+      font-size: 1.25rem; // text-xl
+      font-weight: 700; // font-bold
+      color: $background-white;
+      margin-bottom: 1rem; // mb-4
+    }
+    .footer-text {
+      color: $text-medium; // gray-400
+      line-height: 1.625; // leading-relaxed
+    }
+  }
+
+  &-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 0.5rem; // space-y-2 for ul
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      color: $text-medium; // gray-400
+      transition: color $transition-duration;
+      padding: 0.25rem 0.5rem; // px-2 py-1
+      display: inline-block; // For padding and hover area
+      &:hover {
+        color: $background-white;
+      }
+    }
+  }
+
+  &-contact-info {
+    color: $text-medium; // gray-400
+    margin-bottom: 0.5rem; // mb-2
+    a {
+      color: $text-medium; // gray-400
+      &:hover {
+        color: $background-white;
+      }
+    }
+  }
+
+  &-social-links {
+    display: flex;
+    gap: 1rem; // space-x-4
+    margin-top: 1rem; // mt-4
+    a {
+      color: $text-medium; // gray-400
+      transition: color $transition-duration;
+      &:hover {
+        color: $background-white;
+      }
+    }
+    svg {
+      height: 1.5rem; // h-6
+      width: 1.5rem; // w-6
+    }
+  }
+
+  &-copyright {
+    border-top: 1px solid #374151; // A slightly lighter border for contrast
+    margin-top: 2rem; // mt-8
+    padding-top: 2rem; // pt-8
+    text-align: center;
+    color: $text-medium; // gray-500
+  }
+}

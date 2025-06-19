@@ -1,0 +1,50 @@
+// src/styles/sections/_cta.scss
+@import '../variables';
+@import '../mixins';
+
+.cta-section {
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background: linear-gradient(to right, $secondary-color, $primary-color); // Uses new primary/secondary gradient
+  color: $text-light;
+  text-align: center;
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .cta-content {
+    @include responsive-container;
+  }
+
+  .cta-title {
+    font-size: 2.25rem; // text-4xl
+    @media (min-width: 768px) { font-size: 3rem; } // text-5xl
+    font-weight: 700; // font-bold
+    margin-bottom: 2rem; // mb-8
+  }
+
+  .cta-description {
+    font-size: 1.25rem; // text-xl
+    @media (min-width: 768px) { // md breakpoint
+      font-size: 1.5rem; // text-2xl
+    }
+    margin-bottom: 2.5rem; // mb-10
+    max-width: 48rem; // max-w-3xl
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem; // gap-6
+
+    @media (min-width: 640px) { // sm breakpoint
+      flex-direction: row;
+    }
+  }
+}

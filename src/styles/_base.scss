@@ -1,0 +1,40 @@
+// src/styles/_base.scss
+@import '../styles/variables';
+
+html {
+  scroll-behavior: smooth; // For smooth scrolling to sections
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  color: $text-dark; // Using the new dark complementary color
+  background-color: $off-white-background; // Using the new off-white background
+  line-height: 1.6; // Improved readability
+}
+
+// Global animations
+@keyframes fadeInU {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInL {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInR {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up { animation: fadeInU 0.8s ease-out forwards; }
+.animate-fade-in-left { animation: fadeInL 0.8s ease-out forwards; }
+.animate-fade-in-right { animation: fadeInR 0.8s ease-out forwards; }
+
+// Utility classes (if needed, otherwise rely on component specific styles)
+.break-line {
+  display: none;
+  @media (min-width: 640px) { // sm breakpoint
+    display: inline;
+  }
+}

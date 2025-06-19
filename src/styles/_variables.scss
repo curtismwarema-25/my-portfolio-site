@@ -1,0 +1,44 @@
+// src/styles/_variables.scss
+// Colors
+$primary-color: #31572C; // New: Dark Green
+$secondary-color: #90A955; // New: Light Olive Green
+
+$off-white-background: #F7F9F9; // Subtle off-white for main background
+$dark-complementary: #090302;   // Near Black for dark elements
+
+$text-light: #F9FAFB; // Used for text on dark backgrounds (can still be F9FAFB for pure white text)
+$text-dark: $dark-complementary; // Text on light backgrounds now uses the near black
+$text-medium: lighten($dark-complementary, 30%); // A lighter shade of the near black for secondary text
+
+$background-light: $off-white-background; // Main light background
+$background-white: #FFFFFF; // Pure white for specific elements like cards
+$background-dark: $dark-complementary; // Main dark background, e.g., footer
+$border-color: #D1D5DB; // gray-300 (can be adjusted if needed, but still provides light contrast)
+$accent-color-light: lighten($primary-color, 40%); // Light accent from new primary, e.g., for active nav links
+
+
+// Font
+$font-primary: 'Inter', sans-serif;
+
+// Spacing
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 1.5rem;   // 24px
+$spacing-xl: 2rem;     // 32px
+$spacing-xxl: 3rem;    // 48px
+$spacing-hero-y: 6rem; // 96px
+$spacing-section-y: 4rem; // 64px
+
+// Border Radius
+$border-radius-md: 0.5rem; // 8px (for boxy buttons)
+$border-radius-xl: 0.75rem; // 12px (for cards/images)
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Transitions
+$transition-duration: 0.3s;
+$transition-timing-function: ease-in-out;

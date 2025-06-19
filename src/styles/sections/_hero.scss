@@ -1,0 +1,64 @@
+// src/styles/sections/_hero.scss
+@import '../variables';
+@import '../mixins';
+
+.hero-section {
+  position: relative;
+  background: linear-gradient(to right, $primary-color, $secondary-color); // Uses new primary/secondary
+  color: $text-light;
+  padding-top: $spacing-hero-y; // py-24
+  padding-bottom: $spacing-hero-y; // py-24
+  @include flex-center;
+  min-height: 60vh;
+  overflow: hidden;
+  margin-top: 5rem; // pt-20 from main-content
+
+  @media (min-width: 768px) { // md breakpoint
+    padding-top: 8rem; // py-32
+    padding-bottom: 8rem; // py-32
+  }
+
+  .hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+  }
+
+  .hero-content {
+    @include responsive-container;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-tagline {
+    font-size: 2.25rem; // text-4xl
+    @media (min-width: 768px) { // md breakpoint
+      font-size: 3.75rem; // text-6xl
+    }
+    font-weight: 800; // font-extrabold
+    line-height: 1.25; // leading-tight
+    letter-spacing: -0.025em; // tracking-tight
+    margin-bottom: 1.5rem; // mb-6
+    animation-delay: 0s;
+  }
+
+  .hero-description {
+    font-size: 1.25rem; // text-xl
+    @media (min-width: 768px) { // md breakpoint
+      font-size: 1.5rem; // text-2xl
+    }
+    margin-bottom: 2.5rem; // mb-10
+    max-width: 48rem; // max-w-2xl
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    animation-delay: 0.3s;
+  }
+
+  .hero-btn {
+    animation-delay: 0.6s;
+  }
+}
