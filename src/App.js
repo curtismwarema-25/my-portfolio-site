@@ -253,7 +253,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src={process.env.PUBLIC_URL + '/img/20.jpg'} // Corrected to use process.env.PUBLIC_URL and new path
+              src={process.env.PUBLIC_URL + '/img/9.jpg'} // Corrected to use process.env.PUBLIC_URL and new path
               alt="Portrait Photography Gallery Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/CCD1D9/333333?text=Image+Unavailable"; }}
