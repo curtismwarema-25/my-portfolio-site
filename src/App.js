@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/index.scss'; // This line is commented out for Canvas compatibility.
+// import './styles/index.scss'; // This line is commented out for Canvas compatibility.
                                // Remember to uncomment this and set up Sass locally!
 
 // Main App component
@@ -179,7 +179,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
     <> {/* Removed redundant <main> tag here */}
       {/* Hero Header Section */}
       <section id="home" className="hero-section">
-        <div className="hero-image-overlay" style={{ backgroundImage: "url('/img/portrait.jpg')" }}></div>
+        <div className="hero-image-overlay" style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/portrait.jpg'})` }}></div>
         <div className="hero-content">
           <h1 className="hero-tagline">
             Crafting Unique Experiences Through <br className="break-line" /> Design and Photography
@@ -211,7 +211,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src="/img/homepage-design.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/homepage-design.jpg'} // Updated image path
               alt="Alarms Sacco UI/UX Project Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/CCD1D9/333333?text=Image+Unavailable"; }}
@@ -232,7 +232,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src="/img/home.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/home.jpg'} // Updated image path
               alt="Pixel-Waves UI/UX Project Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/D9CDE3/555555?text=Image+Unavailable"; }}
@@ -253,7 +253,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src="img/gallery/20.jpg" // Updated to use the user-provided image path
+              src={process.env.PUBLIC_URL + '/img/20.jpg'} // Corrected to use process.env.PUBLIC_URL and new path
               alt="Portrait Photography Gallery Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/CCD1D9/333333?text=Image+Unavailable"; }}
@@ -274,7 +274,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src="/img/international women's day.jpg" // User-provided image for this section
+              src={process.env.PUBLIC_URL + "/img/international women's day.jpg"} // Corrected to use process.env.PUBLIC_URL
               alt="International Women's Day Poster Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/8B8B9B/FFFFFF?text=Image+Unavailable"; }}
@@ -345,13 +345,13 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           <p className="about-me-description">
             I've applied these skills in various roles, including leading UI/UX design for student-led tech projects at asiliHub, and serving as a Class Representative, where I focused on user-centered design principles. When I'm not bringing digital visions to life or behind the lens, I enjoy exploring new coffee shops, staying updated on emerging tech trends, or experimenting with digital art.
           </p>
-          <a href="/resume-v2 (1).pdf" download="Curtis_Mwarema_Resume.pdf" className="btn btn-primary about-me-btn">
+          <a href={process.env.PUBLIC_URL + "/resume-v2 (1).pdf"} download="Curtis_Mwarema_Resume.pdf" className="btn btn-primary about-me-btn">
             Download My Resume
           </a>
         </div>
         <div className="about-me-image-container">
           <img
-            src="/img/curtis.jpg" // Updated image path
+            src={process.env.PUBLIC_URL + '/img/curtis.jpg'} // Updated image path
             alt="Your Portrait"
             className="about-me-image"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x600/C0C0C0/333333?text=Image+Unavailable"; }}
@@ -377,10 +377,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 1 */}
           <div className="gallery-item">
             <img
-              src="/img/services.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/services.jpg'} // Updated image path
               alt="Gallery Item Product UI Concept"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Product+UI+Concept"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Product+UI+Concept"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Product UI Concept</p>
@@ -389,10 +389,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 2 */}
           <div className="gallery-item">
             <img
-              src="/img/refresh-logo(white).jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/refresh-logo(white).jpg'} // Updated image path
               alt="Gallery Item Branding Mockup"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Branding+Mockup"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Branding+Mockup"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Branding Mockup</p>
@@ -401,10 +401,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 3 */}
           <div className="gallery-item">
             <img
-              src="/img/Landscape-2.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/Landscape-2.jpg'} // Updated image path
               alt="Gallery Item Landscape Photography"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Image+Unavailable"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Landscape+Photography"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Landscape Photography</p>
@@ -413,10 +413,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 4 */}
           <div className="gallery-item">
             <img
-              src="/img/t-shirt.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/t-shirt.jpg'} // Updated image path
               alt="Gallery Item Mobile App Screens"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Image+Unavailable"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Image+Unavailable"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Mock-ups</p>
@@ -425,10 +425,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 5 */}
           <div className="gallery-item">
             <img
-              src="/img/portrait.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + '/img/portrait.jpg'} // Updated image path
               alt="Gallery Item Portrait Session"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Image+Unavailable"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Image+Unavailable"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Portrait Session</p>
@@ -437,10 +437,10 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 6: Poster Design */}
           <div className="gallery-item">
             <img
-              src="/img/international women's day.jpg" // Updated image path
+              src={process.env.PUBLIC_URL + "/img/international women's day.jpg"} // Updated image path
               alt="Gallery Item Poster Design"
               className="gallery-item-image"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/8B8B9B/FFFFFF?text=Image+Unavailable"; }}
+              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/8B8B9B/FFFFFF?text=Image+Unavailable"; }}
             />
             <div className="gallery-item-overlay">
               <p className="gallery-item-title">Poster Design</p>
@@ -519,7 +519,7 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
         {/* Homepage Design */}
         <h3>Homepage Design</h3>
-        <img src="/img/homepage-design.jpg" alt="Alarms Sacco Homepage Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Homepage+Design"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/homepage-design.jpg'} alt="Alarms Sacco Homepage Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Homepage+Design"; }} />
         <p>
           The Homepage was designed as the primary entry point, focusing on a clean, inviting aesthetic with clear calls to action. The goal was to instill confidence and guide users towards key services from the moment they land on the site.
           <ul className="case-study-list">
@@ -532,7 +532,7 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
         {/* About Us Page */}
         <h3>About Us Page Design</h3>
-        <img src="/img/About Us.jpg" alt="Alarms Sacco About Us Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=About+Us+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/About Us.jpg'} alt="Alarms Sacco About Us Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=About+Us+Page"; }} />
         <p>
           The About Us page focuses on building trust and community, showcasing the Sacco's mission and values. It emphasizes the human element and the Sacco's commitment to empowering its members.
           <ul className="case-study-list">
@@ -545,7 +545,7 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
         {/* Services Page */}
         <h3>Services Page Design</h3>
-        <img src="/img/Services.jpg" alt="Alarms Sacco Services Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Services+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/Services.jpg'} alt="Alarms Sacco Services Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Services+Page"; }} />
         <p>
           The Services page is designed to clearly present the financial products offered by Alarms Sacco in an easily digestible format, empowering members with smart financial tools.
           <ul className="case-study-list">
@@ -558,7 +558,7 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
         {/* Staff Page */}
         <h3>Staff Page Design</h3>
-        <img src="/img/staff.jpg" alt="Alarms Sacco Staff Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Staff+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/staff.jpg'} alt="Alarms Sacco Staff Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Staff+Page"; }} />
         <p>
           The Staff page aims to introduce the team behind Alarms Sacco, fostering trust and a personal connection with members by showcasing the individuals dedicated to their financial success.
           <ul className="case-study-list">
@@ -571,7 +571,7 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
         {/* Contact Page */}
         <h3>Contact Page Design</h3>
-        <img src="/img/Contact.jpg" alt="Alarms Sacco Contact Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Contact+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/Contact.jpg'} alt="Alarms Sacco Contact Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/CCAAEE/333333?text=Contact+Page"; }} />
         <p>
           The Contact page provides clear and accessible ways for members to reach out to Alarms Sacco, designed for ease of use and to ensure all queries are addressed efficiently.
           <ul className="case-study-list">
@@ -617,7 +617,7 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 
         {/* Home Page */}
         <h3>Home Page Design</h3>
-        <img src="/img/home.jpg" alt="Pixel-Waves Home Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Home+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/home.jpg'} alt="Pixel-Waves Home Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Home+Page"; }} />
         <p>
           The Home page serves as the grand entry to Pixel-Waves. Its design emphasizes a captivating hero section with dynamic visuals to immediately immerse the user in the artistic atmosphere. Key design choices included:
           <ul className="case-study-list">
@@ -630,7 +630,7 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 
         {/* Products Page */}
         <h3>Products Page Design</h3>
-        <img src="/img/products.jpg" alt="Pixel-Waves Products Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Products+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/products.jpg'} alt="Pixel-Waves Products Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Products+Page"; }} />
         <p>
           The Products page is designed to showcase Pixel-Waves' offerings in a visually engaging and informative manner. Design considerations included:
           <ul className="case-study-list">
@@ -643,7 +643,7 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 
         {/* Pricing Page */}
         <h3>Pricing Page Design</h3>
-        <img src="/img/pricing.jpg" alt="Pixel-Waves Pricing Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Pricing+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/pricing.jpg'} alt="Pixel-Waves Pricing Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Pricing+Page"; }} />
         <p>
           The Pricing page aims for transparency and ease of comparison, helping users choose the best plan for their needs. Key design elements:
           <ul className="case-study-list">
@@ -656,7 +656,7 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 
         {/* User Support Page */}
         <h3>User Support Page Design</h3>
-        <img src="/img/userSupport.jpg" alt="Pixel-Waves User Support Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=User+Support+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/userSupport.jpg'} alt="Pixel-Waves User Support Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=User+Support+Page"; }} />
         <p>
           The User Support page is crafted to quickly direct users to the help they need, minimizing frustration. Design choices focused on:
           <ul className="case-study-list">
@@ -669,7 +669,7 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 
         {/* News and Updates Page */}
         <h3>News and Updates Page Design</h3>
-        <img src="/img/News and Updates.jpg" alt="Pixel-Waves News and Updates Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=News+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/News and Updates.jpg'} alt="Pixel-Waves News and Updates Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=News+Page"; }} />
         <p>
           The News and Updates page keeps the community informed about Pixel-Waves' latest developments and insights. Design considerations included:
           <ul className="case-study-list">
@@ -694,34 +694,8 @@ const PixelWavesCaseStudy = ({ onBack }) => {
 const PortraitGalleryCaseStudy = ({ onBack }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const portraitImages = [
-   "img/g1.jpg",
-    "img/2.jpg",
-    "img/3.jpg",
-    "img/4.jpg",
-    "img/5.jpg",
-    "img/6.jpg",
-    "img/7.jpg",
-    "img/8.jpg",
-    "img/9.jpg",
-    "img/10.jpg",
-    "img/11.jpg",
-    "img/12.jpg",
-    "img/13.jpg",
-    "img/14.jpg",
-    "img/15.jpg",
-    "img/16.jpg",
-    "img/17.jpg",
-    "img/18.jpg",
-    "img/19.jpg",
-    "img/20.jpg",
-    "img/21.jpg",
-    "img/22.jpg",
-    "img/23.jpg",
-    "img/24.jpg",
-    "img/25.jpg",
-    "img/26.jpg",
-  ];
+  // Generate image paths from 1.jpg to 26.jpg in the public/img folder
+  const portraitImages = Array.from({ length: 26 }, (_, i) => `${process.env.PUBLIC_URL}/img/${i + 1}.jpg`);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -808,7 +782,7 @@ const PortraitGalleryCaseStudy = ({ onBack }) => {
 const InfographicsCaseStudy = ({ onBack }) => {
   const infographics = [
     {
-      image: "img/international women's day.jpg",
+      image: process.env.PUBLIC_URL + "/img/international women's day.jpg", // Corrected to use process.env.PUBLIC_URL
       alt: "International Women's Day Poster",
       title: "International Women's Day Poster",
       description: "A poster designed for Kisii University's International Women's Day 2025 event, focusing on empowerment through education, leadership, and community.",
@@ -820,7 +794,7 @@ const InfographicsCaseStudy = ({ onBack }) => {
       ]
     },
     {
-      image: "img/happy new week II.jpg",
+      image: process.env.PUBLIC_URL + "/img/happy new week II.jpg", // Corrected to use process.env.PUBLIC_URL
       alt: "Happy New Week II Poster",
       title: "Happy New Week II Poster (AsiliHub)",
       description: "A vibrant greeting poster for 'AsiliHub,' wishing a powerful start to the new week, emphasizing new energy and opportunities.",
@@ -833,7 +807,7 @@ const InfographicsCaseStudy = ({ onBack }) => {
       ]
     },
     {
-      image: "img/APP DEV.png",
+      image: process.env.PUBLIC_URL + "/img/APP DEV.png", // Corrected to use process.env.PUBLIC_URL
       alt: "App Dev Poster",
       title: "App Development Promotion Poster (AsiliHub)",
       description: "A promotional poster for 'AsiliHub' inviting potential clients to collaborate on app, game, or website development.",
@@ -846,7 +820,7 @@ const InfographicsCaseStudy = ({ onBack }) => {
       ]
     },
     {
-      image: "img/poise and purpose gala v4.jpg",
+      image: process.env.PUBLIC_URL + "/img/poise and purpose gala v4.jpg", // Corrected to use process.env.PUBLIC_URL
       alt: "Poise and Purpose Gala Poster",
       title: "Poise and Purpose Gala Noir Poster",
       description: "An event announcement poster for 'Poise & Purpose Gala Noir' with an Afro-Elegant (Royal) theme.",
