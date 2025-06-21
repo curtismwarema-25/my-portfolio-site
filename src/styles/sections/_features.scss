@@ -2,23 +2,39 @@
 @import '../variables';
 @import '../mixins';
 
+.portfolio-showcase-container {
+  // Added for general portfolio section styling, if needed
+  padding-top: $spacing-section-y;
+  padding-bottom: $spacing-section-y;
+  background-color: $off-white-background; // The overall container for features
+  .portfolio-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: $text-dark;
+    margin-bottom: 3rem;
+    @include responsive-container; // Apply container styling
+  }
+}
+
+
 .feature-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $background-white; // Cards/sections can still be white on off-white
+  background-color: $background-white; // Individual feature sections can be white
   @include responsive-container;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem; // gap-12
   align-items: center;
+  margin-bottom: $spacing-section-y; // Space between feature items
 
-  // Spacing between feature sections
-  &:not(:first-of-type) {
-    margin-top: $spacing-section-y; // Adds space between consecutive feature sections
-    background-color: $off-white-background; // Alternate background if desired
+  // Alternating background for visual separation
+  &:nth-of-type(odd) {
+    background-color: $background-white;
   }
-  &:nth-of-type(even) { // For every second feature section
-    background-color: $off-white-background; // Ensures alternation
+  &:nth-of-type(even) {
+    background-color: $off-white-background;
   }
 
 

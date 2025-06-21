@@ -1,0 +1,161 @@
+// src/styles/sections/_portrait-gallery.scss
+@import '../variables';
+@import '../mixins';
+
+.case-study-detail-section { // Reusing general case study styling for consistency
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Adjust as needed */
+    margin: 3rem auto; /* Center carousel */
+    overflow: hidden;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-xl;
+    background-color: $background-dark; // Dark background for carousel
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Each slide is 100% of container width */
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%; /* Each slide takes full width */
+    height: 700px; /* Increased height for portrait orientation */
+    @media (min-width: 768px) {
+      height: 800px; /* Even taller on desktop */
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the slide area, cropping if needed to fit the portrait frame */
+    object-position: center;
+    border-radius: $border-radius-xl;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $background-white;
+    border: none;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: $border-radius-md;
+    transition: background-color $transition-duration;
+    z-index: 10;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    &--prev {
+      left: $spacing-md;
+    }
+
+    &--next {
+      right: $spacing-md;
+    }
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: $spacing-md;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+
+    .carousel-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color $transition-duration;
+
+      &.active {
+        background-color: $primary-color; // Active dot color
+        box-shadow: $shadow-md;
+      }
+
+      &:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  .asymmetric-gallery {
+    display: grid;
+    // Responsive columns, allowing images to roughly maintain portrait aspect
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 220px; // A base height for rows, which some images will span
+    grid-auto-flow: dense; // Fills in gaps for a tighter pack
+    gap: 2px; // Reduced gap to 2px
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr); // Max 3 columns on desktop
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // Max 3 columns on larger screens
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%; // Image will fill its grid area
+      object-fit: cover; // Maintains aspect ratio and covers the area
+      border-radius: 0; // Removed border-radius
+      box-shadow: $shadow-sm;
+      transition: transform $transition-duration, box-shadow $transition-duration;
+
+      &:hover {
+        /* Removed transform: scale(1.02); */
+        box-shadow: $shadow-md;
+        z-index: 5;
+      }
+    }
+
+    /* Apply random-like row spans for asymmetry */
+    /* These will make certain images taller, creating a dynamic layout.
+       The :nth-child patterns are chosen to create a varied, non-repeating feel,
+       while 'grid-auto-flow: dense' minimizes gaps by filling in smaller items. */
+    .gallery-image:nth-child(3n + 1) { /* Every 3rd image (1st, 4th, 7th...) */
+      grid-row: span 2; /* Make it span 2 rows vertically */
+    }
+
+    .gallery-image:nth-child(5n + 2) { /* Every 5th image (2nd, 7th, 12th...) */
+      grid-row: span 3; /* Make it span 3 rows for a larger portrait feature */
+    }
+
+    .gallery-image:nth-child(7n + 4) { /* Every 7th image (4th, 11th...) - another variant */
+      grid-column: span 2; /* Span 2 columns to create a wider element */
+      grid-row: span 2; /* And 2 rows tall */
+    }
+
+
+    /* Reset for smaller screens if spans become problematic, ensuring uniform items
+       to prevent overflow issues and better stacking on small viewports. */
+    @media (max-width: 767px) {
+      .gallery-image:nth-child(3n + 1),
+      .gallery-image:nth-child(5n + 2),
+      .gallery-image:nth-child(7n + 4) {
+        grid-column: span 1; // Revert to single column
+        grid-row: span 1;   // Revert to single row
+        height: 250px;      /* Uniform height for mobile for better stacking */
+      }
+      grid-auto-rows: 250px; /* Uniform base row height for mobile to avoid issues */
+    }
+  }
+}
