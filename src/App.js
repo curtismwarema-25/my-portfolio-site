@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './styles/index.scss'; // This line is commented out for Canvas compatibility.
+import './styles/index.scss'; // This line is commented out for Canvas compatibility.
                                // Remember to uncomment this and set up Sass locally!
 
 // Main App component
@@ -274,7 +274,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           </div>
           <div className="feature-image-container">
             <img
-              src="img/international women's day.jpg" // User-provided image for this section
+              src="/img/international women's day.jpg" // User-provided image for this section
               alt="International Women's Day Poster Thumbnail"
               className="feature-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x600/8B8B9B/FFFFFF?text=Image+Unavailable"; }}
@@ -695,32 +695,32 @@ const PortraitGalleryCaseStudy = ({ onBack }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const portraitImages = [
-   "img/gallery/1.jpg",
-    "img/gallery/2.jpg",
-    "img/gallery/3.jpg",
-    "img/gallery/4.jpg",
-    "img/gallery/5.jpg",
-    "img/gallery/6.jpg",
-    "img/gallery/7.jpg",
-    "img/gallery/8.jpg",
-    "img/gallery/9.jpg",
-    "img/gallery/10.jpg",
-    "img/gallery/11.jpg",
-    "img/gallery/12.jpg",
-    "img/gallery/13.jpg",
-    "img/gallery/14.jpg",
-    "img/gallery/15.jpg",
-    "img/gallery/16.jpg",
-    "img/gallery/17.jpg",
-    "img/gallery/18.jpg",
-    "img/gallery/19.jpg",
-    "img/gallery/20.jpg",
-    "img/gallery/21.jpg",
-    "img/gallery/22.jpg",
-    "img/gallery/23.jpg",
-    "img/gallery/24.jpg",
-    "img/gallery/25.jpg",
-    "img/gallery/26.jpg",
+   "img/g1.jpg",
+    "img/2.jpg",
+    "img/3.jpg",
+    "img/4.jpg",
+    "img/5.jpg",
+    "img/6.jpg",
+    "img/7.jpg",
+    "img/8.jpg",
+    "img/9.jpg",
+    "img/10.jpg",
+    "img/11.jpg",
+    "img/12.jpg",
+    "img/13.jpg",
+    "img/14.jpg",
+    "img/15.jpg",
+    "img/16.jpg",
+    "img/17.jpg",
+    "img/18.jpg",
+    "img/19.jpg",
+    "img/20.jpg",
+    "img/21.jpg",
+    "img/22.jpg",
+    "img/23.jpg",
+    "img/24.jpg",
+    "img/25.jpg",
+    "img/26.jpg",
   ];
 
   useEffect(() => {
