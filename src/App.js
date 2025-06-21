@@ -345,7 +345,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           <p className="about-me-description">
             I've applied these skills in various roles, including leading UI/UX design for student-led tech projects at asiliHub, and serving as a Class Representative, where I focused on user-centered design principles. When I'm not bringing digital visions to life or behind the lens, I enjoy exploring new coffee shops, staying updated on emerging tech trends, or experimenting with digital art.
           </p>
-          <a href={process.env.PUBLIC_URL + "/resume-v2 (1).pdf"} download="Curtis_Mwarema_Resume.pdf" className="btn btn-primary about-me-btn">
+          <a href={process.env.PUBLIC_URL + "resume.pdf"} download="Curtis_Mwarema_Resume.pdf" className="btn btn-primary about-me-btn">
             Download My Resume
           </a>
         </div>
@@ -377,7 +377,7 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           {/* Gallery Item 1 */}
           <div className="gallery-item">
             <img
-              src={process.env.PUBLIC_URL + '/img/services.jpg'} // Updated image path
+              src={process.env.PUBLIC_URL + '/img/Services.jpg'} // Updated image path
               alt="Gallery Item Product UI Concept"
               className="gallery-item-image"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x750/94A3B8/FFFFFF?text=Product+UI+Concept"; }}
