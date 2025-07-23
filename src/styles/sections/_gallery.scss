@@ -5,7 +5,7 @@
 .gallery-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $background-light; // Uses off-white background
+  background-color: $secondary-background; // Secondary background
   @include responsive-container;
 
   @media (min-width: 768px) { // md breakpoint
@@ -14,17 +14,18 @@
   }
 
   .gallery-title {
-    font-size: 2.25rem; // text-4xl
-    font-weight: 700; // font-bold
+    font-size: 2.5rem; // Slightly larger
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem; // mb-12
-    color: $text-dark;
+    margin-bottom: $spacing-xxl; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem; // gap-8
+    gap: $spacing-xl; // Use spacing variable
 
     @media (min-width: 640px) { // sm breakpoint
       grid-template-columns: repeat(2, 1fr);
@@ -36,13 +37,15 @@
 
   .gallery-item {
     position: relative;
-    border-radius: $border-radius-xl; // rounded-xl
+    border-radius: $border-radius-md; // Medium border-radius
     overflow: hidden;
-    box-shadow: $shadow-lg;
-    transition: all $transition-duration $transition-timing-function;
+    box-shadow: $shadow-deep; // Deeper shadow
+    transition: all $transition-speed $transition-ease;
+    border: 1px solid $border-dark; // Subtle border
 
     &:hover {
-      @include hover-float-shadow;
+      box-shadow: $shadow-glow; // Subtle glow on hover
+      transform: translateY(-2px); // Slight lift effect
     }
 
     &-image {
@@ -55,10 +58,10 @@
     &-overlay {
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.6); // bg-black bg-opacity-60
+      background-color: rgba($primary-background, 0.8); // Darker overlay
       @include flex-center;
       opacity: 0;
-      transition: opacity $transition-duration;
+      transition: opacity $transition-speed $transition-ease;
 
       .gallery-item:hover & {
         opacity: 1;
@@ -66,9 +69,10 @@
     }
 
     &-title {
-      color: $background-white;
-      font-size: 1.25rem; // text-xl
-      font-weight: 700; // font-bold
+      color: $accent-green; // Accent green for title
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-shadow: $shadow-glow;
     }
   }
 }

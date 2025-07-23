@@ -1,19 +1,19 @@
 // src/styles/sections/_features.scss
-@import '../variables';
-@import '../mixins';
+@use '../variables' as *;
+@use '../mixins' as *;
 
 .portfolio-showcase-container {
-  // Added for general portfolio section styling, if needed
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $off-white-background; // The overall container for features
+  background-color: $primary-background; // Deep charcoal/black
   .portfolio-main-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    color: $text-dark;
-    margin-bottom: 3rem;
-    @include responsive-container; // Apply container styling
+    color: $accent-blue; // Accent color for main title
+    margin-bottom: $spacing-xxl; // Use spacing variable
+    @include responsive-container;
+    text-shadow: $shadow-glow;
   }
 }
 
@@ -21,20 +21,20 @@
 .feature-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $background-white; // Individual feature sections can be white
+  background-color: $primary-background; // Primary background
   @include responsive-container;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem; // gap-12
+  gap: $spacing-xxl; // Use spacing variable
   align-items: center;
-  margin-bottom: $spacing-section-y; // Space between feature items
+  margin-bottom: $spacing-section-y;
 
   // Alternating background for visual separation
   &:nth-of-type(odd) {
-    background-color: $background-white;
+    background-color: $primary-background;
   }
   &:nth-of-type(even) {
-    background-color: $off-white-background;
+    background-color: $secondary-background; // Secondary background for alternating sections
   }
 
 
@@ -51,13 +51,13 @@
   }
 
   .feature-image-container {
-    order: 1; // Default: image on left
-    animation: fadeInR 0.8s ease-out forwards; // Initial animation
-    @media (min-width: 768px) { order: 2; } // On desktop, image on right by default
-    background-color: $border-color;
-    border-radius: $border-radius-xl;
+    order: 1;
+    animation: fadeInR 0.8s ease-out forwards;
+    @media (min-width: 768px) { order: 2; }
+    background-color: $secondary-background; // Secondary background for image container
+    border-radius: $border-radius-md; // Medium border-radius
     overflow: hidden;
-    box-shadow: $shadow-xl;
+    box-shadow: $shadow-deep; // Deeper shadow
   }
 
   &--reversed { // Class for alternating asymmetry
@@ -76,31 +76,32 @@
 
 
   .feature-title {
-    font-size: 2.25rem; // text-4xl
-    font-weight: 700; // font-bold
-    margin-bottom: 1.5rem; // mb-6
-    color: $text-dark;
+    font-size: 2.5rem; // Slightly larger
+    font-weight: 700;
+    margin-bottom: $spacing-lg; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .feature-description {
-    font-size: 1.125rem; // text-lg
-    color: $text-medium;
-    line-height: 1.625; // leading-relaxed
-    margin-bottom: 2rem; // mb-8
+    font-size: 1.125rem;
+    color: $text-primary; // Primary text color
+    line-height: 1.6;
+    margin-bottom: $spacing-xl; // Use spacing variable
   }
 
   .feature-image {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: $border-radius-xl;
+    border-radius: $border-radius-sm; // Smaller border-radius
   }
 }
 
 .features-list-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $background-light;
+  background-color: $primary-background; // Primary background
   @include responsive-container;
   text-align: center;
 
@@ -110,16 +111,17 @@
   }
 
   .features-list-title {
-    font-size: 2.25rem; // text-4xl
-    font-weight: 700; // font-bold
-    margin-bottom: 3rem; // mb-12
-    color: $text-dark;
+    font-size: 2.5rem; // Slightly larger
+    font-weight: 700;
+    margin-bottom: $spacing-xxl; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .features-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem; // gap-10
+    gap: $spacing-xxl; // Use spacing variable
 
     @media (min-width: 768px) { // md breakpoint
       grid-template-columns: repeat(3, 1fr);
@@ -127,37 +129,39 @@
   }
 
   .feature-card {
-    background-color: $background-white;
-    border-radius: $border-radius-xl; // rounded-xl
-    box-shadow: $shadow-lg;
-    padding: 2rem; // p-8
-    transition: all $transition-duration $transition-timing-function;
+    background-color: $secondary-background; // Secondary background for cards
+    border-radius: $border-radius-md; // Medium border-radius
+    box-shadow: $shadow-deep; // Deeper shadow
+    padding: $spacing-xl; // Use spacing variable
+    transition: all $transition-speed $transition-ease;
+    border: 1px solid $border-dark; // Subtle border
 
     &:hover {
-      @include hover-float-shadow;
+      box-shadow: $shadow-glow; // Subtle glow on hover
+      transform: translateY(-2px); // Slight lift effect
     }
 
     .feature-icon {
-      color: $primary-color; // Icons will use the new primary color
-      margin-bottom: 1.5rem; // mb-6
+      color: $accent-green; // Accent green for icons
+      margin-bottom: $spacing-lg; // Use spacing variable
       display: flex;
-      justify-content: center; // Center SVG
+      justify-content: center;
       svg {
-        height: 4rem; // h-16
-        width: 4rem; // w-16
+        height: $spacing-xxl; // Use spacing variable for size
+        width: $spacing-xxl; // Use spacing variable for size
       }
     }
 
     .feature-card-title {
-      font-size: 1.5rem; // text-2xl
-      font-weight: 600; // font-semibold
-      margin-bottom: 1rem; // mb-4
-      color: $text-dark;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: $spacing-md; // Use spacing variable
+      color: $accent-blue; // Accent color for card titles
     }
 
     .feature-card-description {
-      color: $text-medium;
-      line-height: 1.625; // leading-relaxed
+      color: $text-secondary; // Secondary text color
+      line-height: 1.6;
     }
   }
 }

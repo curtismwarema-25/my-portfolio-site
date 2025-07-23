@@ -1,11 +1,11 @@
 // src/styles/components/_navbar.scss
-@import '../variables';
-@import '../mixins';
+@use '../variables' as *;
+@use '../mixins' as *;
 
 .navbar {
-  background-color: $background-white; // Still white, contrasts well with off-white body
-  box-shadow: $shadow-sm;
-  padding: $spacing-md $spacing-lg; // py-4 px-6
+  background-color: $secondary-background; // Darker background for navbar
+  box-shadow: $shadow-deep; // Deeper shadow for separation
+  padding: $spacing-md $spacing-lg;
   position: fixed;
   width: 100%;
   z-index: 50;
@@ -24,27 +24,30 @@
   }
 
   &-logo a {
-    font-size: 1.5rem; // text-2xl
-    font-weight: 700; // font-bold
-    color: $text-dark;
-    transition: color $transition-duration;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $accent-blue; // Accent color for logo
+    text-decoration: none;
+    transition: color $transition-speed $transition-ease;
+
     &:hover {
-      color: $primary-color;
+      color: lighten($accent-blue, 15%);
+      text-shadow: $shadow-glow; // Subtle glow on hover
     }
   }
 
   .mobile-menu-toggle {
-    @media (min-width: 768px) { // md breakpoint
+    @media (min-width: 768px) {
       display: none;
     }
     button {
-      color: $text-medium;
+      color: $text-secondary; // Muted text color for toggle
       &:hover {
-        color: $text-dark;
+        color: $text-primary;
       }
       &:focus {
         outline: none;
-        color: $text-dark;
+        color: $text-primary;
       }
     }
   }
@@ -72,21 +75,22 @@
     display: block;
     padding: $spacing-sm $spacing-md;
     border-bottom: 2px solid transparent;
-    transition: border-color $transition-duration, color $transition-duration;
-    font-size: 1.125rem; // text-lg
-    font-weight: 500; // font-medium
-    color: $text-dark; // Changed to dark text color for visibility
-    text-decoration: none; // Removed underline
+    transition: border-color $transition-speed $transition-ease, color $transition-speed $transition-ease;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $text-secondary; // Muted text color for nav links
+    text-decoration: none;
 
     &:hover {
-      border-color: $primary-color;
-      color: $primary-color; // Active/hover color can be primary
+      border-color: $accent-green; // Accent green on hover
+      color: $accent-green;
+      text-shadow: $shadow-glow;
     }
 
     &.active {
-      border-color: $primary-color;
-      color: $primary-color;
-      font-weight: 600; // font-semibold
+      border-color: $accent-blue; // Accent blue for active link
+      color: $accent-blue;
+      font-weight: 600;
     }
   }
 }

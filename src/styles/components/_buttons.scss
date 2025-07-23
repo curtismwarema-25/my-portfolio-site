@@ -3,40 +3,43 @@
 @import '../mixins';
 
 .btn {
-  font-weight: 700; // font-bold
-  padding: 0.75rem 2rem; // py-3 px-8
-  border-radius: $border-radius-md; // rounded-md
-  box-shadow: $shadow-md;
-  font-size: 1.125rem; // text-lg
-  transition: all $transition-duration $transition-timing-function;
-  display: inline-block; // Ensure padding applies correctly
-  text-decoration: none; // Ensure no underline for button-like links
+  font-weight: 700;
+  padding: $spacing-md $spacing-lg; // Adjusted padding to use spacing variables
+  border-radius: $border-radius-sm; // Use smaller border-radius for a sharper look
+  box-shadow: $shadow-deep; // Deeper shadow for buttons
+  font-size: 1rem; // Slightly smaller font size for precision
+  transition: all $transition-speed $transition-ease;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase; // Uppercase text for an engineered feel
+  letter-spacing: 1px; // Add letter spacing
 
   &:hover {
-    @include hover-float-shadow;
     cursor: pointer;
+    box-shadow: $shadow-glow; // Subtle glow on hover
+    transform: translateY(-2px); // Slight lift effect
   }
 
   &-primary {
-    background-color: $primary-color;
-    color: $text-light;
-    border: 2px solid $primary-color;
+    background-color: $accent-blue;
+    color: $primary-background;
+    border: 2px solid $accent-blue;
 
     &:hover {
-      background-color: darken($primary-color, 5%);
-      border-color: darken($primary-color, 5%);
+      background-color: lighten($accent-blue, 10%);
+      border-color: lighten($accent-blue, 10%);
     }
   }
 
   &-secondary {
     background-color: transparent;
-    border: 2px solid $text-dark; // Changed border color to dark for visibility
-    color: $text-dark;            // Changed text color to dark for visibility
+    border: 2px solid $accent-green; // Accent green border for secondary
+    color: $accent-green; // Accent green text
 
     &:hover {
-      background-color: $text-light;
-      color: $primary-color; // Text color changes to primary on hover
-      border-color: $text-light;
+      background-color: $accent-green;
+      color: $primary-background;
+      border-color: $accent-green;
     }
   }
 }

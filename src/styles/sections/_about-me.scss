@@ -5,11 +5,11 @@
 .about-me-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $off-white-background; // Main off-white background
+  background-color: $primary-background; // Deep charcoal/black
   @include responsive-container;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem; // gap-12
+  gap: $spacing-xxl; // Use spacing variable for gap
   align-items: center;
 
   @media (min-width: 768px) { // md breakpoint
@@ -25,43 +25,44 @@
   }
 
   .about-me-title {
-    font-size: 2.25rem; // text-4xl
-    font-weight: 700; // font-bold
-    margin-bottom: 1.5rem; // mb-6
-    color: $text-dark;
+    font-size: 2.5rem; // Slightly larger for impact
+    font-weight: 700;
+    margin-bottom: $spacing-lg; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .about-me-description {
-    font-size: 1.125rem; // text-lg
-    color: $text-medium;
-    line-height: 1.625; // leading-relaxed
-    margin-bottom: 1.25rem; // space between paragraphs
+    font-size: 1.125rem;
+    color: $text-primary; // Primary text color
+    line-height: 1.6;
+    margin-bottom: $spacing-md; // Use spacing variable
     &:last-of-type {
-      margin-bottom: 2rem; // space before button
+      margin-bottom: $spacing-xl; // Use spacing variable
     }
   }
 
   .about-me-image-container {
-    order: 1; // Default order on mobile
-    @media (min-width: 768px) { order: 2; } // Image on right for desktop
-    display: flex; // To center image
+    order: 1;
+    @media (min-width: 768px) { order: 2; }
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem; // some padding around image for effect
-    background-color: $background-white; // A subtle background for the image
-    border-radius: $border-radius-xl;
-    box-shadow: $shadow-lg;
+    padding: $spacing-md; // Use spacing variable for padding
+    background-color: $secondary-background; // Secondary background for image container
+    border-radius: $border-radius-md; // Use medium border-radius
+    box-shadow: $shadow-deep; // Deeper shadow
   }
 
   .about-me-image {
     width: 100%;
-    max-width: 300px; // Max width for the image
+    max-width: 300px;
     height: auto;
-    border-radius: $border-radius-md; // Rounded corners for image
-    display: block; // Remove extra space below image
+    border-radius: $border-radius-sm; // Use smaller border-radius for image
+    display: block;
   }
 
   .about-me-btn {
-    margin-top: 1.5rem; // Give some space
+    margin-top: $spacing-lg; // Use spacing variable
   }
 }

@@ -5,8 +5,8 @@
 .cta-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background: linear-gradient(to right, $secondary-color, $primary-color); // Uses new primary/secondary gradient
-  color: $text-light;
+  background: linear-gradient(to right, $primary-background, $secondary-background); // Dark gradient
+  color: $text-primary; // Primary text color
   text-align: center;
 
   @media (min-width: 768px) { // md breakpoint
@@ -19,31 +19,33 @@
   }
 
   .cta-title {
-    font-size: 2.25rem; // text-4xl
-    @media (min-width: 768px) { font-size: 3rem; } // text-5xl
-    font-weight: 700; // font-bold
-    margin-bottom: 2rem; // mb-8
+    font-size: 2.5rem;
+    @media (min-width: 768px) { font-size: 3rem; }
+    font-weight: 700;
+    margin-bottom: $spacing-xl; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .cta-description {
-    font-size: 1.25rem; // text-xl
-    @media (min-width: 768px) { // md breakpoint
-      font-size: 1.5rem; // text-2xl
+    font-size: 1.25rem;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
     }
-    margin-bottom: 2.5rem; // mb-10
-    max-width: 48rem; // max-w-3xl
+    margin-bottom: $spacing-xxl; // Use spacing variable
+    max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.9;
+    color: $text-secondary; // Secondary text color
   }
 
   .cta-buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem; // gap-6
+    gap: $spacing-lg; // Use spacing variable
 
-    @media (min-width: 640px) { // sm breakpoint
+    @media (min-width: 640px) {
       flex-direction: row;
     }
   }

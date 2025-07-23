@@ -1,40 +1,39 @@
 // src/styles/index.scss (main entry file)
 // Import variables and mixins first
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 // Import base styles
-@import 'base';
+@use 'base';
 
 // Import component styles
-@import 'components/navbar';
-@import 'components/buttons';
+@use 'components/navbar';
+@use 'components/buttons';
 
 // Import section styles
-@import 'sections/hero';
-@import 'sections/features';
-@import 'sections/testimonials';
-@import 'sections/gallery';
-@import 'sections/cta';
-@import 'sections/about-me';
-@import 'sections/contact';
-@import 'sections/case-study';
-@import 'sections/portrait-gallery'; // NEW: Import for portrait gallery styles
+@use 'sections/hero';
+@use 'sections/features';
+@use 'sections/testimonials';
+@use 'sections/gallery';
+@use 'sections/cta';
+@use 'sections/about-me';
+@use 'sections/contact';
+@use 'sections/case-study';
+@use 'sections/portrait-gallery'; // NEW: Import for portrait gallery styles
 
 
 // Import footer styles
-@import 'footer';
+@use 'footer';
 
 // Global App container padding to account for fixed navbar
 .app-container {
     padding-top: 5rem; // Height of navbar, adjust if navbar height changes
     min-height: 100vh;
-    background-color: $off-white-background; // Ensures this applies globally
-    font-family: $font-primary;
-    color: $text-dark;
+    background-color: $primary-background; // Use primary background
+    font-family: $font-secondary; // Use secondary font for app container
+    color: $text-primary; // Use primary text color
 }
 
 .main-content {
-    // No top padding here as .app-container handles it
-    padding-top: 0;
+    padding-top: 0; /* Reverted to allow content to scroll over fixed background */
 }

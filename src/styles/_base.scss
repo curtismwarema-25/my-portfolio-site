@@ -1,5 +1,5 @@
 // src/styles/_base.scss
-@import '../styles/variables';
+@use 'variables' as *;
 
 html {
   scroll-behavior: smooth; // For smooth scrolling to sections
@@ -7,10 +7,56 @@ html {
 
 body {
   margin: 0;
+  font-family: $font-secondary; // Use secondary font for body text
+  color: $text-primary; // Light gray for main text
+  background-color: $primary-background; // Deep charcoal/black
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary; // Use primary font for headings
+  color: $text-primary;
+  margin-top: 0;
+  margin-bottom: $spacing-md;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $accent-blue; // Accent color for links
+  text-decoration: none;
+  transition: color $transition-speed $transition-ease;
+
+  &:hover {
+    color: lighten($accent-blue, 15%);
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $border-radius-sm;
+  background-color: $accent-blue;
+  color: $primary-background;
   font-family: $font-primary;
-  color: $text-dark; // Using the new dark complementary color
-  background-color: $off-white-background; // Using the new off-white background
-  line-height: 1.6; // Improved readability
+  font-weight: bold;
+  transition: background-color $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+  &:hover {
+    background-color: lighten($accent-blue, 10%);
+    box-shadow: $shadow-glow;
+  }
+}
+
+section {
+  padding: $spacing-section-y $spacing-xl;
+  position: relative;
+  z-index: 1; // Ensure sections are above any global backgrounds
 }
 
 // Global animations

@@ -5,7 +5,7 @@
 .contact-section {
   padding-top: $spacing-section-y;
   padding-bottom: $spacing-section-y;
-  background-color: $background-white; // Can be white on off-white body
+  background-color: $secondary-background; // Use secondary background
   @include responsive-container;
   text-align: center;
 
@@ -15,17 +15,18 @@
   }
 
   .contact-title {
-    font-size: 2.25rem; // text-4xl
-    font-weight: 700; // font-bold
-    margin-bottom: 1.5rem; // mb-6
-    color: $text-dark;
+    font-size: 2.5rem; // Slightly larger for impact
+    font-weight: 700;
+    margin-bottom: $spacing-lg; // Use spacing variable
+    color: $accent-blue; // Accent color for titles
+    text-shadow: $shadow-glow;
   }
 
   .contact-description {
-    font-size: 1.125rem; // text-lg
-    color: $text-medium;
-    line-height: 1.625; // leading-relaxed
-    margin-bottom: 2.5rem; // mb-10
+    font-size: 1.125rem;
+    color: $text-primary; // Primary text color
+    line-height: 1.6;
+    margin-bottom: $spacing-xxl; // Use spacing variable
     max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
@@ -40,19 +41,19 @@
 
     .form-input,
     .form-textarea {
-      padding: 0.75rem 1rem;
-      border: 1px solid $border-color;
-      border-radius: $border-radius-md;
-      font-family: $font-primary;
+      padding: $spacing-md $spacing-lg; // Use spacing variables
+      border: 1px solid $border-dark; // Darker border
+      border-radius: $border-radius-sm; // Smaller border-radius
+      font-family: $font-secondary; // Use secondary font
       font-size: 1rem;
-      color: $text-dark;
-      background-color: $background-white;
-      transition: border-color $transition-duration, box-shadow $transition-duration;
+      color: $text-primary; // Primary text color
+      background-color: $primary-background; // Primary background for input fields
+      transition: border-color $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
 
       &:focus {
         outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 0 2px lighten($primary-color, 30%); // Focus ring
+        border-color: $accent-blue; // Accent blue on focus
+        box-shadow: $shadow-glow; // Subtle glow on focus
       }
     }
 
@@ -69,21 +70,21 @@
   }
 
   .contact-details {
-    margin-top: 2rem; // mt-8
-    font-size: 1.125rem; // text-lg
-    color: $text-medium;
+    margin-top: $spacing-xl; // Use spacing variable
+    font-size: 1.125rem;
+    color: $text-secondary; // Secondary text color
     p {
-      margin-bottom: 0.5rem; // space between contact lines
+      margin-bottom: $spacing-sm; // Use spacing variable
       &:last-child {
         margin-bottom: 0;
       }
     }
     a {
-      color: $text-dark;
+      color: $accent-green; // Accent green for links
       text-decoration: none;
       &:hover {
-        color: $primary-color;
-        text-decoration: underline;
+        color: lighten($accent-green, 15%);
+        text-shadow: $shadow-glow;
       }
     }
   }

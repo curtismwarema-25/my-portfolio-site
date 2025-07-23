@@ -7,12 +7,13 @@
   .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 900px; /* Adjust as needed */
-    margin: 3rem auto; /* Center carousel */
+    max-width: 900px;
+    margin: $spacing-xxl auto; // Use spacing variable
     overflow: hidden;
-    border-radius: $border-radius-xl;
-    box-shadow: $shadow-xl;
-    background-color: $background-dark; // Dark background for carousel
+    border-radius: $border-radius-md; // Medium border-radius
+    box-shadow: $shadow-deep; // Deeper shadow
+    background-color: $secondary-background; // Secondary background for carousel
+    border: 1px solid $border-dark; // Subtle border
   }
 
   .carousel-track {
@@ -36,27 +37,28 @@
   .carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the slide area, cropping if needed to fit the portrait frame */
+    object-fit: cover;
     object-position: center;
-    border-radius: $border-radius-xl;
+    border-radius: $border-radius-sm; // Smaller border-radius
   }
 
   .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: $background-white;
+    background-color: rgba($primary-background, 0.6);
+    color: $accent-blue;
     border: none;
-    padding: 0.8rem 1rem;
+    padding: $spacing-md $spacing-lg;
     cursor: pointer;
     font-size: 1.5rem;
     border-radius: $border-radius-md;
-    transition: background-color $transition-duration;
+    transition: background-color $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
     z-index: 10;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba($primary-background, 0.8);
+      box-shadow: $shadow-glow;
     }
 
     &--prev {
@@ -79,18 +81,18 @@
     .carousel-dot {
       width: 0.75rem;
       height: 0.75rem;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba($text-primary, 0.5);
       border-radius: 50%;
       cursor: pointer;
-      transition: background-color $transition-duration;
+      transition: background-color $transition-speed $transition-ease;
 
       &.active {
-        background-color: $primary-color; // Active dot color
-        box-shadow: $shadow-md;
+        background-color: $accent-green; // Active dot color
+        box-shadow: $shadow-glow;
       }
 
       &:hover:not(.active) {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba($text-primary, 0.8);
       }
     }
   }
@@ -101,9 +103,9 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-rows: 220px; // A base height for rows, which some images will span
     grid-auto-flow: dense; // Fills in gaps for a tighter pack
-    gap: 2px; // Reduced gap to 2px
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    gap: 2px;
+    margin-top: $spacing-xxl; // Use spacing variable
+    margin-bottom: $spacing-xxl; // Use spacing variable
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr); // Max 3 columns on desktop
@@ -118,11 +120,10 @@
       object-fit: cover; // Maintains aspect ratio and covers the area
       border-radius: 0; // Removed border-radius
       box-shadow: $shadow-sm;
-      transition: transform $transition-duration, box-shadow $transition-duration;
+      transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
 
       &:hover {
-        /* Removed transform: scale(1.02); */
-        box-shadow: $shadow-md;
+        box-shadow: $shadow-glow;
         z-index: 5;
       }
     }

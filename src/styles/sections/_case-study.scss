@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../mixins';
+@use '../variables' as *;
+@use '../mixins' as *;
 
 .case-study-detail-section {
   padding-top: $spacing-section-y;
@@ -108,8 +108,8 @@
   .case-study-footer {
     text-align: center;
     margin-top: 4rem; // More space before footer button
-    .btn-primary {
-      // Inherits primary button styles
-    }
+    // .btn-primary {
+    //   // Inherits primary button styles
+    // }
   }
 }

@@ -1,44 +1,49 @@
-// src/styles/_variables.scss
-// Colors
-$primary-color: #31572C; // New: Dark Green
-$secondary-color: #90A955; // New: Light Olive Green
+// Color variables
+$primary-color: #007bff; // A shade of blue for primary actions and highlights
+$secondary-color: #6c757d; // A muted grey for secondary elements
+$accent-blue: #007bff; // Accent color for links and buttons
+$accent-green: #28a745; // A green accent color
 
-$off-white-background: #F7F9F9; // Subtle off-white for main background
-$dark-complementary: #090302;   // Near Black for dark elements
+$text-dark: #f8f9fa; // Dark text for headings and important info (now light for dark background)
+$text-medium: #adb5bd; // Medium grey for body text (adjusted for dark background)
+$text-light: #f8f9fa; // Light text, e.g., on dark backgrounds (remains light)
+$text-primary: #f8f9fa; // Primary text color, often dark (now light for dark background)
+$text-secondary: #adb5bd; // Secondary text color, often muted (adjusted for dark background)
 
-$text-light: #F9FAFB; // Used for text on dark backgrounds (can still be F9FAFB for pure white text)
-$text-dark: $dark-complementary; // Text on light backgrounds now uses the near black
-$text-medium: lighten($dark-complementary, 30%); // A lighter shade of the near black for secondary text
+$background-light: #343a40; // Light background, off-white (now dark grey)
+$primary-background: #212529; // Pure white background (now very dark grey)
+$secondary-background: #343a40; // Darker background for elements like navbar
 
-$background-light: $off-white-background; // Main light background
-$background-white: #FFFFFF; // Pure white for specific elements like cards
-$background-dark: $dark-complementary; // Main dark background, e.g., footer
-$border-color: #D1D5DB; // gray-300 (can be adjusted if needed, but still provides light contrast)
-$accent-color-light: lighten($primary-color, 40%); // Light accent from new primary, e.g., for active nav links
+// Border colors
+$border-dark: #495057; // Dark border color
 
+// Font variables
+$font-primary: 'Arial', sans-serif;
+$font-secondary: 'Helvetica Neue', sans-serif;
 
-// Font
-$font-primary: 'Inter', sans-serif;
+// Spacing variables
+$spacing-unit: 1rem;
+$spacing-sm: $spacing-unit * 0.5; // 8px
+$spacing-md: $spacing-unit * 1;   // 16px
+$spacing-lg: $spacing-unit * 1.5; // 24px
+$spacing-xl: $spacing-unit * 2;   // 32px
+$spacing-xxl: $spacing-unit * 3;  // 48px
 
-// Spacing
-$spacing-sm: 0.5rem;   // 8px
-$spacing-md: 1rem;     // 16px
-$spacing-lg: 1.5rem;   // 24px
-$spacing-xl: 2rem;     // 32px
-$spacing-xxl: 3rem;    // 48px
-$spacing-hero-y: 6rem; // 96px
-$spacing-section-y: 4rem; // 64px
+$spacing-section-y: 5rem; // Vertical padding for sections
 
-// Border Radius
-$border-radius-md: 0.5rem; // 8px (for boxy buttons)
-$border-radius-xl: 0.75rem; // 12px (for cards/images)
+// Border radius
+$border-radius-sm: 0;
+$border-radius-md: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
 
-// Shadows
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+// Box shadows
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+$shadow-glow: 0 0 15px rgba($accent-blue, 0.5); // A glowing shadow for interactive elements
+$shadow-deep: 0 2px 5px rgba(0, 0, 0, 0.2); // Deeper shadow for elements like navbar
 
 // Transitions
-$transition-duration: 0.3s;
-$transition-timing-function: ease-in-out;
+$transition-speed: 0.3s;
+$transition-ease: ease-in-out;
