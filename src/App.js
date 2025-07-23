@@ -224,7 +224,21 @@ const DefaultHomePageContent = ({ handleViewCaseStudy, navigateTo }) => {
           <div className="feature-content">
             <h2 className="feature-title">Latest Project: Pixel-Waves UI/UX Experience</h2>
             <p className="feature-description">
-                Designed the immersive user interface and experience for "Pixel-Waves," a creative digital art platform. Focused on visual harmony, fluid interactions, and a user-friendly interface that encourages artistic exploration and collaboration.
+                Designed the comprehensive user interface and experience for Pixelwave Systems, a new asiliHub subsidiary dedicated to software product development. My work focused on creating a highly functional and intuitive website that effectively showcases their offerings.
+
+                Key contributions included:
+
+                Product Showcase: Designed detailed and engaging pages for core systems like the Pixel School Management System, ensuring clear feature presentation and user navigation.
+
+                Subscription & Pricing Plans: Developed clear, user-friendly layouts for various service tiers, optimizing for easy comparison and decision-making.
+
+                User Support & Documentation: Structured intuitive sections for guides, FAQs, and customer support, enhancing user self-service and problem resolution.
+
+                News & Updates: Created visually appealing announcement sections for new features and project developments.
+
+                Community & Learning Hub: Designed an engaging platform for blogs, webinars, and case studies, fostering a vibrant user community.
+
+                This project emphasized a strong focus on information architecture, user-centered design principles, and visual consistency to create a seamless and informative experience for software product users.
             </p>
             <button className="btn btn-secondary feature-btn" onClick={() => handleViewCaseStudy('pixel-waves')}> {/* Added onClick */}
               Explore Design
