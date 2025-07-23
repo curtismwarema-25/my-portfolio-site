@@ -510,12 +510,12 @@ const AlarmsSaccoCaseStudy = ({ onBack }) => {
 
       <div className="case-study-content">
         <p className="case-study-intro">
-          This case study details the design process for creating a brand new user interface and experience for Alarms Sacco, a microfinance institution venturing into digital services for the first time. The aim was to build a modern, intuitive, and accessible digital platform from the ground up, to streamline financial management for its members, encompassing savings, loans, and investments.
+          This case study details the design and user experience work for Pixelwave Systems, the official website for an asiliHub subsidiary focused on software product development. My role involved designing a comprehensive, intuitive platform to showcase and support their diverse software offerings.
         </p>
 
-        <h2 className="case-study-sub-title">Problem Statement</h2>
+        <h2 className="case-study-sub-title">Design Philosophy</h2>
         <p>
-          Alarms Sacco operated primarily through manual processes and limited digital tools, which created inefficiencies, slowed member services, and constrained scalability. Members faced challenges with paperwork, manual transactions, and a lack of real-time access to their financial information, impacting both their experience and the Sacco's operational capacity.
+          The core design philosophy for Pixelwave Systems centered on user-centered design principles, robust information architecture, and visual consistency. The aim was to create a highly functional and intuitive website that effectively showcases their software products and provides seamless support, ensuring a professional and informative experience for all users.
         </p>
         {/* Removed specific "old UI" image as per clarification */}
 
@@ -614,31 +614,31 @@ const PixelWavesCaseStudy = ({ onBack }) => {
         <button onClick={onBack} className="btn btn-secondary back-btn">
           &larr; Back to Portfolio
         </button>
-        <h1 className="case-study-title">Pixel-Waves UI/UX Experience: Designing a Digital Art Platform</h1>
+        <h1 className="case-study-title">Pixelwave Systems: Designing a Comprehensive Software Platform</h1>
       </div>
 
       <div className="case-study-content">
         <p className="case-study-intro">
-          This case study explores the design process behind "Pixel-Waves," a creative digital art platform aimed at fostering artistic exploration, collaboration, and community among digital artists. The focus was on creating a visually harmonious and intuitively navigable experience across various key pages.
+          This case study details the design and user experience work for Pixelwave Systems, the official website for an asiliHub subsidiary focused on software product development. My role involved designing a comprehensive, intuitive platform to showcase and support their diverse software offerings.
         </p>
 
         <h2 className="case-study-sub-title">Design Philosophy</h2>
         <p>
-          The core design philosophy for Pixel-Waves centered on minimalism, dark mode aesthetics, and clear content hierarchy to allow the vibrant digital art to truly shine. We aimed for an experience that felt both professional and inspiring, enabling seamless navigation for artists and art enthusiasts alike.
+          The core design philosophy for Pixelwave Systems centered on user-centered design principles, robust information architecture, and visual consistency. The aim was to create a highly functional and intuitive website that effectively showcases their software products and provides seamless support, ensuring a professional and informative experience for all users.
         </p>
 
         <h2 className="case-study-sub-title">Page Breakdown & Design Choices</h2>
 
         {/* Home Page */}
         <h3>Home Page Design</h3>
-        <img src={process.env.PUBLIC_URL + '/img/home.jpg'} alt="Pixel-Waves Home Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Home+Page"; }} />
+        <img src={process.env.PUBLIC_URL + '/img/home.jpg'} alt="Pixelwave Systems Home Page Design" className="case-study-image" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1200x700/000000/FFFFFF?text=Home+Page"; }} />
         <p>
-          The Home page serves as the grand entry to Pixel-Waves. Its design emphasizes a captivating hero section with dynamic visuals to immediately immerse the user in the artistic atmosphere. Key design choices included:
+          The Home page serves as the grand entry to Pixelwave Systems. Its design emphasizes a captivating hero section with dynamic visuals to immediately immerse the user in the software ecosystem. Key design choices included:
           <ul className="case-study-list">
-            <li>**Dark Theme:** Establishes a sophisticated and modern feel, making bright artwork pop.</li>
-            <li>**Intuitive Navigation:** A streamlined top navigation bar (Home, Products, Pricing, User Support, News, Scholars, Contact) ensures easy access to main sections.</li>
+            <li>**Modern Aesthetic:** Utilizes a clean, professional design with clear calls to action.</li>
+            <li>**Intuitive Navigation:** A streamlined top navigation bar (Home, Products, Pricing, User Support, News, Community, Contact) ensures easy access to main sections.</li>
             <li>**Clear Call to Action:** "Explore Our Solutions" is prominently placed to guide users.</li>
-            <li>**Minimalist Layout:** Reduces clutter, allowing focus on the core message and visual appeal.</li>
+            <li>**User-Centric Layout:** Reduces clutter, allowing focus on the core message and visual appeal, facilitating easy information discovery.</li>
           </ul>
         </p>
 
